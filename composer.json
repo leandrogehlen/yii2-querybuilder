@@ -1,0 +1,28 @@
+{
+    "name": "leandrogehlen/yii2-querybuilder",
+    "description": "Extension for Yii2 Framework to work with jQuery QueryBuilder",
+    "keywords": ["yii2", "dynamic", "query", "builder", "querybuilder", "interface"],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/leandrogehlen/yii2-querybuilder/issues",
+        "source": "https://github.com/leandrogehlen/yii2-querybuilder"
+    },
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Leandro Guindani Gehlen",
+            "email": "leandrogehlen@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "2.0.*",
+        "yiisoft/yii2-bootstrap": "2.0.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-4": { "leandrogehlen\\querybuilder\\": "" }
+    }
+}
