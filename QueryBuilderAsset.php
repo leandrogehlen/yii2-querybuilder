@@ -14,7 +14,7 @@ class QueryBuilderAsset extends AssetBundle {
     public $sourcePath = '@bower/jQuery-QueryBuilder/dist';
 
     public $js = [
-        'query-builder.js',
+        'query-builder.standalone.js',
     ];
 
     public $css = [
