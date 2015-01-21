@@ -19,7 +19,7 @@ use yii\helpers\ArrayHelper;
  *     if ($rules) {
  *         $translator = new Translator(Json::decode($rules));
  *         $query->andWhere($translator->where())
- *               ->addParams($translator->where());
+ *               ->addParams($translator->params());
  *     }
  *
  *     $dataProvider = new ActiveDataProvider([
@@ -127,7 +127,6 @@ class Translator extends Object
         $condition = " " . $data[self::KEY_CONDITION] . " ";
 
         foreach ($data[self::KEY_RULES] as $rule) {
-
             if (isset($rule['condition'])) {
                 $where[] = $this->buildWhere($rule);
             } else {
@@ -148,12 +147,9 @@ class Translator extends Object
                         $i++;
                     }
                 }
-
                 $where[] = $this->encodeRule($field, $oper, $params);
             }
-
         }
-
         return "(" . implode($condition, $where) . ")";
     }
 
