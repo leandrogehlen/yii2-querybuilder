@@ -35,12 +35,6 @@ use yii\helpers\ArrayHelper;
  */
 class Translator extends Object
 {
-    const KEY_RULES = 'rules';
-    const KEY_OPERATOR = 'operator';
-    const KEY_CONDITION = 'condition';
-    const KEY_FIELD = 'field';
-    const KEY_VALUE = 'value';
-
     private $_where;
     private $_params = [];
     private $_operators;
@@ -124,16 +118,16 @@ class Translator extends Object
     protected function buildWhere($data)
     {
         $where = [];
-        $condition = " " . $data[self::KEY_CONDITION] . " ";
+        $condition = " " . $data['condition'] . " ";
 
-        foreach ($data[self::KEY_RULES] as $rule) {
+        foreach ($data['rules'] as $rule) {
             if (isset($rule['condition'])) {
                 $where[] = $this->buildWhere($rule);
             } else {
                 $params = [];
-                $oper = $rule[self::KEY_OPERATOR];
-                $field = $rule[self::KEY_FIELD];
-                $value = ArrayHelper::getValue($rule, self::KEY_VALUE);
+                $operator = $rule['operator'];
+                $field = $rule['field'];
+                $value = ArrayHelper::getValue($rule, 'value');
 
                 if ($value !== null) {
                     $i = count($this->_params);
@@ -147,7 +141,7 @@ class Translator extends Object
                         $i++;
                     }
                 }
-                $where[] = $this->encodeRule($field, $oper, $params);
+                $where[] = $this->encodeRule($field, $operator, $params);
             }
         }
         return "(" . implode($condition, $where) . ")";
