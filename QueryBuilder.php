@@ -25,16 +25,6 @@ class QueryBuilder extends  Widget {
     public $allowGroups;
 
     /**
-     * @var bool Enable sortable rules and groups. Might not work on old browsers not supporting HTML5 Drag & Drop.
-     */
-    public $sortable;
-
-    /**
-     * @var array Array of operators
-     */
-    public $operators;
-
-    /**
      * @var string[] available conditions
      */
     public $conditions;
@@ -45,9 +35,30 @@ class QueryBuilder extends  Widget {
     public $defaultCondition;
 
     /**
+     * @var bool When an error occurs on a rule, display an icon  with a tooltip explaining the error.
+     */
+    public $displayErrors;
+
+    /**
      * @var array (key-value pairs)
      */
-    public $lang = [];
+    public $lang;
+
+    /**
+     * @var array Array of operators
+     */
+    public $operators;
+
+    /**
+     * @var array (key-value pairs)
+     */
+    public $plugins;
+
+    /**
+     * @var bool Enable sortable rules and groups. Might not work on old browsers not supporting HTML5 Drag & Drop.
+     */
+    public $sortable;
+
 
     /**
      * @var yii\web\JsExpression called when a validation error occurs.

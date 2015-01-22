@@ -36,8 +36,8 @@ class Icon extends Object implements Optionable
     public $removeRule;
 
     /**
-     * @var string Sort icon
+     * @var string Error icon
      */
-    public $sort;
+    public $error;
 
 } 

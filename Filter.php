@@ -86,7 +86,7 @@ class Filter extends Object implements Optionable {
     public $plugin;
 
     /**
-     * @var string Object of parameters to pass to the plugin
+     * @var array Object of parameters to pass to the plugin
      */
     public $pluginOptions;
 
