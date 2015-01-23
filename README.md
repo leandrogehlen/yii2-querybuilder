@@ -23,3 +23,54 @@ or add
 ```
 
 to the require section of your `composer.json` file.
+
+How to use
+----------
+
+**View**:
+
+```php
+<?php QueryBuilderForm::begin([
+    'rules' => $rules,
+    'builder' => [
+        'id' => 'query-builder',
+        'filters' => [
+            ['id' => 'id', 'label' => 'Id', 'type' => 'integer'],
+            ['id' => 'name', 'label' => 'Name', 'type' => 'string'],
+            ['id' => 'lastName', 'label' => 'Last Name', 'type' => 'string']
+        ]
+    ]
+ ])?>
+ 
+      <?= Html::submitButton('Apply'); ?>
+      
+ <?php QueryBuilderForm::end() ?>
+```
+
+**Controller**:
+
+```php
+public function actionIndex()
+{
+      $query = Customer::find();
+      
+      $rules = Yii::$app->request->get('rules');
+      if ($rules) {
+          $translator = new Translator(Json::decode($rules));
+          $query
+            ->andWhere($translator->where())
+            ->addParams($translator->params());
+      }
+      
+      $dataProvider = new ActiveDataProvider([
+          'query' => $query,
+      ]);
+    
+      return $this->render('index', [
+          'dataProvider' => $dataProvider,
+          'rules' => $rules
+      ]);
+}
+```
+
+
