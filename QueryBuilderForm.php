@@ -1,9 +1,8 @@
 <?php
 
-namespace app\components\widgets;
+namespace leandrogehlen\querybuilder;
 
 
-use leandrogehlen\querybuilder\QueryBuilder;
 use yii\base\InvalidConfigException;
 use yii\base\Widget;
 use Yii;
