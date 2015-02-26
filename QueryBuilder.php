@@ -25,6 +25,11 @@ class QueryBuilder extends  Widget {
     public $allowGroups;
 
     /**
+     * @var bool No error will be thrown is the builder is entirely empty.
+     */
+    public $allowEmpty = true;
+
+    /**
      * @var string[] available conditions
      */
     public $conditions;

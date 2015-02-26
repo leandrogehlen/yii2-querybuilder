@@ -7,6 +7,8 @@ use yii\base\InvalidConfigException;
 use yii\base\Widget;
 use Yii;
 use yii\helpers\Html;
+use yii\helpers\Inflector;
+use yii\helpers\Json;
 
 
 /**
@@ -85,7 +87,7 @@ class QueryBuilderForm extends Widget
     public $builder;
 
     /**
-     * @var string JSON rules representation into a string format
+     * @var string JSON rules representation into array format
      */
     public $rules;
 
@@ -122,11 +124,26 @@ class QueryBuilderForm extends Widget
         $view = $this->getView();
 
         if ($this->rules) {
-            $view->registerJs("$('#{$builderId}').queryBuilder('setRules', {$this->rules})");
+            $rules = Json::encode($this->rules);
+            $view->registerJs("$('#{$builderId}').queryBuilder('setRules', {$rules});");
         }
 
+        $frm = Inflector::variablize("frm-$id-querybuilder");
+        $btn = Inflector::variablize("btn-$id-querybuilder-reset");
+
+        $view->registerJs("var $frm = $('#{$id}');");
         $view->registerJs(<<<JS
-$('#{$id}').on('submit', function(){
+    var $btn = {$frm}.find('button:reset:first');
+    if ($btn.length){
+        $btn.on('click', function(){
+            $('#{$builderId}').queryBuilder('reset');
+        });
+    }
+JS
+        );
+
+        $view->registerJs(<<<JS
+{$frm}.on('submit', function(){
     var rules = $('#{$builderId}').queryBuilder('getRules');
     if ($.isEmptyObject(rules)) {
         return false;

@@ -30,6 +30,9 @@ How to use
 **View**:
 
 ```php
+
+use leandrogehlen\querybuilder\QueryBuilderForm;
+
 <?php QueryBuilderForm::begin([
     'rules' => $rules,
     'builder' => [
@@ -43,6 +46,7 @@ How to use
  ])?>
  
       <?= Html::submitButton('Apply'); ?>
+      <?= Html::resetButton('Reset'); ?>
       
  <?php QueryBuilderForm::end() ?>
 ```
@@ -50,12 +54,15 @@ How to use
 **Controller**:
 
 ```php
+
+use leandrogehlen\querybuilder\Translator;
+
 public function actionIndex()
 {
       $query = Customer::find();
-      $rules = Yii::$app->request->get('rules');
+      $rules = Json::decode(Yii::$app->request->get('rules'));
       if ($rules) {
-          $translator = new Translator(Json::decode($rules));
+          $translator = new Translator($rules);
           $query
             ->andWhere($translator->where())
             ->addParams($translator->params());

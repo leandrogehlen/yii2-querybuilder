@@ -117,6 +117,10 @@ class Translator extends Object
      */
     protected function buildWhere($data)
     {
+        if (!isset($data['rules']) || !$data['rules']) {
+            return '';
+        }
+
         $where = [];
         $condition = " " . $data['condition'] . " ";
 
