@@ -40,14 +40,29 @@ class QueryBuilder extends  Widget {
     public $defaultCondition;
 
     /**
-     * @var bool When an error occurs on a rule, display an icon  with a tooltip explaining the error.
+     * @var string Piece of HTML used to separate multiple inputs (for between operator)
      */
-    public $displayErrors;
+    public $inputsSeparator;
+
+    /**
+     * @var string Label of the "no filter" option.
+     */
+    public $selectPlaceholder;
+
+    /**
+     * @var string One of the language files code available. Default is English or the last loaded language.
+     */
+    public $langCode;
 
     /**
      * @var array (key-value pairs)
      */
     public $lang;
+
+    /**
+     * @var bool When an error occurs on a rule, display an icon  with a tooltip explaining the error.
+     */
+    public $displayErrors;
 
     /**
      * @var array Array of operators
@@ -63,31 +78,6 @@ class QueryBuilder extends  Widget {
      * @var bool Enable sortable rules and groups. Might not work on old browsers not supporting HTML5 Drag & Drop.
      */
     public $sortable;
-
-
-    /**
-     * @var yii\web\JsExpression called when a validation error occurs.
-     * Params:
-     * - $rule
-     * - error
-     * - value
-     * - filter
-     * - operator
-     */
-    public $onValidationError;
-
-    /**
-     * @var yii\web\JsExpression called when a validation error occurs
-     * Params:
-     * - $group
-     */
-    public $onAfterAddGroup;
-
-    /**
-     * @var yii\web\JsExpression called when a validation error occurs
-     * - $rule
-     */
-    public $onAfterAddRule;
 
     /**
      * @var array icon configuration. For example:

@@ -31,14 +31,14 @@ class Filter extends Object implements Optionable {
     public $label;
 
     /**
-     * @var string Type of the field. Available types are: string, integer, double, date, time and datetime
-     */
-    public $type;
-
-    /**
      * @var string Optional label of an `<optgroup>` in the filters dropdown.
      */
     public $optgroup;
+
+    /**
+     * @var string Type of the field. Available types are: string, integer, double, date, time and datetime
+     */
+    public $type;
 
     /**
      * @var string Type of input used. Available types are text, radio, checkbox and select.
@@ -47,6 +47,27 @@ class Filter extends Object implements Optionable {
      * - filter
      */
     public $input;
+
+    /**
+     * @var array Required for radio and checkbox inputs. Generally needed for select inputs.
+     * Hashmap of options available. Keys are used as values and values are used as labels.
+     */
+    public $values;
+
+    /**
+     * @var mixed The initial value
+     */
+    public $defaultValue;
+
+    /**
+     * @var int Only for text and textarea inputs: horizontal size of the input
+     */
+    public $size;
+
+    /**
+     * @var int Only for textarea inputs: vertical size of the input
+     */
+    public $rows;
 
     /**
      * @var bool Only for select inputs: accept multiple values
@@ -62,12 +83,6 @@ class Filter extends Object implements Optionable {
      * @var bool Only for radio and checkbox inputs: display inputs vertically on not horizontally
      */
     public $vertical;
-
-    /**
-     * @var array Required for radio and checkboxe inputs. Generally needed for select inputs.
-     * Hashmap of options available. Keys are used as values and values are used as labels.
-     */
-    public $values;
 
     /**
      * @var array Object of options for rule validation.
@@ -88,45 +103,28 @@ class Filter extends Object implements Optionable {
     /**
      * @var array Object of parameters to pass to the plugin
      */
-    public $pluginOptions;
+    public $pluginConfig;
+
+    /**
+     * @var array Additionnal data not use by QueryBuilder but that will be added to the output rules object.
+     * Use this to store any functional data you need.
+     */
+    public $data;
 
     /**
      * @var yii\web\JsExpression Called before the main [[onValidationError]].
      * Params:
-     * - $rule
-     * - error
+     * - rule
      * - value
-     * - filter
-     * - operator
      */
-    public $onValidationError;
+    public $valueSetter;
 
     /**
-     * @var yii\web\JsExpression Called after creating the input of a rule, typically at rule addition and filter change
+     * @var yii\web\JsExpression Called before the main [[onValidationError]].
      * Params:
-     * - $rule
-     * - filter
+     * - rule
      */
-    public $onAfterCreateRuleInput;
-
-    /**
-     * @var yii\web\JsExpression Called after changing the rule operator
-     * Params:
-     * - $rule
-     * - filter
-     * - operator
-     */
-    public $onAfterChangeOperator;
-
-    /**
-     * @var yii\web\JsExpression Called after setting the value of the rule in `setRules` function
-     * Params:
-     * - $rule
-     * - value
-     * - filter
-     * - operator
-     */
-    public $onAfterSetValue;
+    public $valueGetter;
 
     /**
      * @var yii\web\JsExpression Modifier applied to each value in `getRules` function

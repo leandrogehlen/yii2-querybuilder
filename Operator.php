@@ -22,9 +22,17 @@ class Operator extends Object implements Optionable
     public $type;
 
     /**
-     * @var int	The number of inputs displayed. Typical values are 0 (is_null & similar operators), 1 (most operators) and 2 (between operator)
+     * @var int	The number of inputs displayed. Typical values are:
+     * - 0 (is_null & similar operators)
+     * - 1 (most operators)
+     * - 2 (between operator)
      */
-    public $acceptValues;
+    public $nbInputs;
+
+    /**
+     * @var boolean	Inform the builder that each input can have multiple values. true for in, bot_in, false otherwise.
+     */
+    public $multiple;
 
     /**
      * @var array An array containing string, number, datetime.
