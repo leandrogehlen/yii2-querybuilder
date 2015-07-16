@@ -4,6 +4,13 @@ jQuery QueryBuilder Extension for Yii 2
 This is the jQuery QueryBuilder extension for Yii 2. It encapsulates QueryBuilder component in terms of Yii widgets, 
 and thus makes using QueryBuilder component in Yii applications extremely easy
 
+[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
+[![Latest Stable Version](https://poser.pugx.org/leandrogehlen/yii2-querybuilder/v/stable.png)](https://packagist.org/packages/leandrogehlen/yii2-querybuilder)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/leandrogehlen/yii2-querybuilder/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/leandrogehlen/yii2-querybuilder/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/leandrogehlen/yii2-querybuilder/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/leandrogehlen/yii2-querybuilder/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/leandrogehlen/yii2-querybuilder/badges/build.png?b=master)](https://scrutinizer-ci.com/g/leandrogehlen/yii2-querybuilder/build-status/master)
+[![Total Downloads](https://poser.pugx.org/leandrogehlen/yii2-querybuilder/downloads.png)](https://packagist.org/packages/leandrogehlen/yii2-querybuilder)
+
 
 Installation
 ------------
