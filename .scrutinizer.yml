@@ -1,0 +1,19 @@
+build:
+    dependencies:
+        before:
+            - composer global require "fxp/composer-asset-plugin:~1.0.0"
+imports:
+    - php
+checks:
+    php:
+        code_rating: true
+        duplication: true
+tools:
+    php_sim: false
+    php_cpd: false
+    php_pdepend: true
+    php_analyzer: true
+    php_changetracking: true
+filter:
+    excluded_paths:
+        - vendor/*
