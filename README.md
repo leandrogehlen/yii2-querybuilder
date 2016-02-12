@@ -8,7 +8,7 @@ and thus makes using QueryBuilder component in Yii applications extremely easy
 [![Latest Stable Version](https://poser.pugx.org/leandrogehlen/yii2-querybuilder/v/stable.png)](https://packagist.org/packages/leandrogehlen/yii2-querybuilder)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/leandrogehlen/yii2-querybuilder/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/leandrogehlen/yii2-querybuilder/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/leandrogehlen/yii2-querybuilder/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/leandrogehlen/yii2-querybuilder/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/leandrogehlen/yii2-querybuilder/badges/build.png?b=master)](https://scrutinizer-ci.com/g/leandrogehlen/yii2-querybuilder/build-status/master)
+[![Build Status](https://travis-ci.org/leandrogehlen/yii2-data-exporter.svg?branch=master)](https://travis-ci.org/leandrogehlen/yii2-data-exporter)
 [![Code Climate](https://codeclimate.com/github/leandrogehlen/yii2-querybuilder/badges/gpa.svg)](https://codeclimate.com/github/leandrogehlen/yii2-querybuilder)
 [![Total Downloads](https://poser.pugx.org/leandrogehlen/yii2-querybuilder/downloads.png)](https://packagist.org/packages/leandrogehlen/yii2-querybuilder)
 
