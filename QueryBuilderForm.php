@@ -9,7 +9,7 @@ use Yii;
 use yii\helpers\Html;
 use yii\helpers\Inflector;
 use yii\helpers\Json;
-
+use yii\helpers\ArrayHelper;
 
 /**
  * QueryBuilderForm renders a form for to submit rule information.
