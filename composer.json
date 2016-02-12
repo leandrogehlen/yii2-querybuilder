@@ -17,7 +17,6 @@
     ],
     "require": {
         "yiisoft/yii2": "2.0.*",
-        "yiisoft/yii2-bootstrap": "2.0.*",
         "bower-asset/jQuery-QueryBuilder": "2.1.*",
         "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*"
     },
