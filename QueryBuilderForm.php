@@ -107,8 +107,12 @@ class QueryBuilderForm extends Widget
             throw new InvalidConfigException('The "builder" property must be instance of "QueryBuilder');
         }
 
+        if (!isset($this->options['id'])) {
+            $this->options['id'] = $this->getId();
+        }
+
         echo $this->builder->run();
-        echo Html::beginForm($this->action, $this->method, ['id' =>  $this->getId()]);
+        echo Html::beginForm($this->action, $this->method, $this->options);
         echo Html::hiddenInput($this->rulesParam);
     }
 
@@ -119,7 +123,7 @@ class QueryBuilderForm extends Widget
     {
         echo Html::endForm();
 
-        $id = $this->getId();
+        $id = $this->options['id'];
         $builderId = $this->builder->getId();
         $view = $this->getView();
 
