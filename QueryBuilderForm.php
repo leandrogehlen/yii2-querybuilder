@@ -108,7 +108,9 @@ class QueryBuilderForm extends Widget
         }
 
         echo $this->builder->run();
-        echo Html::beginForm($this->action, $this->method, ['id' =>  $this->getId(),$this->options]);
+	$id = ['id' =>  $this->getId()];
+        $options = ArrayHelper::merge($id,$this->options);
+        echo Html::beginForm($this->action, $this->method, $options);
         echo Html::hiddenInput($this->rulesParam);
     }
 
