@@ -9,7 +9,7 @@ use Yii;
 use yii\helpers\Html;
 use yii\helpers\Inflector;
 use yii\helpers\Json;
-
+use yii\helpers\ArrayHelper;
 
 /**
  * QueryBuilderForm renders a form for to submit rule information.
@@ -108,7 +108,9 @@ class QueryBuilderForm extends Widget
         }
 
         echo $this->builder->run();
-        echo Html::beginForm($this->action, $this->method, ['id' =>  $this->getId()]);
+	$id = ['id' =>  $this->getId()];
+        $options = ArrayHelper::merge($id,$this->options);
+        echo Html::beginForm($this->action, $this->method, $options);
         echo Html::hiddenInput($this->rulesParam);
     }
 
