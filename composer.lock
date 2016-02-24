@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bc50ff6f048fbd7727f3a0305c6228d4",
-    "content-hash": "5e69e8fb212f9099bc21c59677279e3a",
+    "hash": "f46ab5781a4da78491348ad97b79e6fd",
+    "content-hash": "3b6ae938f9e2d352d349eddee1083a7e",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -114,40 +114,70 @@
         },
         {
             "name": "bower-asset/jquery",
-            "version": "dev-master",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery.git",
-                "reference": "bf591fb597a056bf2fc9bc474010374695b18d1a"
+                "url": "https://github.com/jquery/jquery-dist.git",
+                "reference": "788eaba2f83e7b7445c7a83a50c81c0704423874"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery/zipball/bf591fb597a056bf2fc9bc474010374695b18d1a",
-                "reference": "bf591fb597a056bf2fc9bc474010374695b18d1a",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/788eaba2f83e7b7445c7a83a50c81c0704423874",
+                "reference": "788eaba2f83e7b7445c7a83a50c81c0704423874",
                 "shasum": ""
             },
-            "type": "bower-asset-library"
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/jquery.js",
+                "bower-asset-ignore": [
+                    "package.json"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "keywords": [
+                "browser",
+                "javascript",
+                "jquery",
+                "library"
+            ]
         },
         {
             "name": "bower-asset/jquery-extendext",
-            "version": "0.1.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mistic100/jQuery.extendext.git",
-                "reference": "98b26f2e2b0e5f5a97edb44539b95bb25676894f"
+                "reference": "cd62f26f5a8ecc774d123255a00a8ee369b418c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mistic100/jQuery.extendext/zipball/98b26f2e2b0e5f5a97edb44539b95bb25676894f",
-                "reference": "98b26f2e2b0e5f5a97edb44539b95bb25676894f",
+                "url": "https://api.github.com/repos/mistic100/jQuery.extendext/zipball/cd62f26f5a8ecc774d123255a00a8ee369b418c2",
+                "reference": "cd62f26f5a8ecc774d123255a00a8ee369b418c2",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/jquery": ">=1.9.1"
             },
+            "require-dev": {
+                "bower-asset/blanket": ">=1.1.0,<2.0.0",
+                "bower-asset/qunit": ">=1.17.0,<2.0.0"
+            },
             "type": "bower-asset-library",
             "extra": {
-                "bower-asset-main": "jQuery.extendext.js"
+                "bower-asset-main": "jQuery.extendext.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "tests",
+                    "package.json",
+                    "Gruntfile.js"
+                ],
+                "branch-alias": {
+                    "dev-master": "0.1.1-dev"
+                }
             },
             "license": [
                 "MIT"
@@ -157,6 +187,53 @@
                 "arrays",
                 "extend",
                 "jQuery"
+            ],
+            "time": "2015-04-08 14:02:42"
+        },
+        {
+            "name": "bower-asset/jquery.inputmask",
+            "version": "3.2.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RobinHerbots/jquery.inputmask.git",
+                "reference": "5a72c563b502b8e05958a524cdfffafe9987be38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/5a72c563b502b8e05958a524cdfffafe9987be38",
+                "reference": "5a72c563b502b8e05958a524cdfffafe9987be38",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./dist/inputmask/inputmask.js"
+                ],
+                "bower-asset-ignore": [
+                    "**/*",
+                    "!dist/*",
+                    "!dist/inputmask/*",
+                    "!dist/min/*",
+                    "!dist/min/inputmask/*",
+                    "!extra/bindings/*",
+                    "!extra/dependencyLibs/*",
+                    "!extra/phone-codes/*"
+                ]
+            },
+            "license": [
+                "http://opensource.org/licenses/mit-license.php"
+            ],
+            "description": "jquery.inputmask is a jquery plugin which create an input mask.",
+            "keywords": [
+                "form",
+                "input",
+                "inputmask",
+                "jquery",
+                "mask",
+                "plugins"
             ]
         },
         {
@@ -197,17 +274,78 @@
             }
         },
         {
-            "name": "cebe/markdown",
-            "version": "0.9.x-dev",
+            "name": "bower-asset/punycode",
+            "version": "v1.3.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/cebe/markdown.git",
-                "reference": "6a3c3737e9c1f4670f39a771f77b536126788ad2"
+                "url": "https://github.com/bestiejs/punycode.js.git",
+                "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cebe/markdown/zipball/6a3c3737e9c1f4670f39a771f77b536126788ad2",
-                "reference": "6a3c3737e9c1f4670f39a771f77b536126788ad2",
+                "url": "https://api.github.com/repos/bestiejs/punycode.js/zipball/38c8d3131a82567bfef18da09f7f4db68c84f8a3",
+                "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "punycode.js",
+                "bower-asset-ignore": [
+                    "coverage",
+                    "tests",
+                    ".*",
+                    "component.json",
+                    "Gruntfile.js",
+                    "node_modules",
+                    "package.json"
+                ]
+            }
+        },
+        {
+            "name": "bower-asset/yii2-pjax",
+            "version": "v2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/jquery-pjax.git",
+                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/6818718408086db6bdcf33649cecb86b6b4f9b67",
+                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.8"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./jquery.pjax.js",
+                "bower-asset-ignore": [
+                    ".travis.yml",
+                    "Gemfile",
+                    "Gemfile.lock",
+                    "vendor/",
+                    "script/",
+                    "test/"
+                ]
+            },
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "cebe/markdown",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cebe/markdown.git",
+                "reference": "e4499350d8a94c4c693a7e784295eff7a717ae67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cebe/markdown/zipball/e4499350d8a94c4c693a7e784295eff7a717ae67",
+                "reference": "e4499350d8a94c4c693a7e784295eff7a717ae67",
                 "shasum": ""
             },
             "require": {
@@ -215,7 +353,9 @@
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*"
+                "cebe/indent": "*",
+                "facebook/xhprof": "*@dev",
+                "phpunit/phpunit": "4.1.*"
             },
             "bin": [
                 "bin/markdown"
@@ -223,8 +363,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev",
-                    "dev-0.9.x-dev": "0.9.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -241,10 +380,10 @@
                     "name": "Carsten Brandt",
                     "email": "mail@cebe.cc",
                     "homepage": "http://cebe.cc/",
-                    "role": "Core framework development"
+                    "role": "Creator"
                 }
             ],
-            "description": "A super fast highly extensible markdown parser for PHP",
+            "description": "A super fast, highly extensible markdown parser for PHP",
             "homepage": "https://github.com/cebe/markdown#readme",
             "keywords": [
                 "extensible",
@@ -253,20 +392,20 @@
                 "markdown",
                 "markdown-extra"
             ],
-            "time": "2014-03-05 16:30:51"
+            "time": "2016-02-09 22:09:46"
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.6.0",
+            "version": "v4.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "6f389f0f25b90d0b495308efcfa073981177f0fd"
+                "reference": "ae1828d955112356f7677c465f94f7deb7d27a40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/6f389f0f25b90d0b495308efcfa073981177f0fd",
-                "reference": "6f389f0f25b90d0b495308efcfa073981177f0fd",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/ae1828d955112356f7677c465f94f7deb7d27a40",
+                "reference": "ae1828d955112356f7677c465f94f7deb7d27a40",
                 "shasum": ""
             },
             "require": {
@@ -297,83 +436,44 @@
             "keywords": [
                 "html"
             ],
-            "time": "2013-11-30 08:25:19"
-        },
-        {
-            "name": "yiisoft/jquery",
-            "version": "2.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/jquery.git",
-                "reference": "bc09bbbc8b40cf89812036188b6f94ae7627c73c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/jquery/zipball/bc09bbbc8b40cf89812036188b6f94ae7627c73c",
-                "reference": "bc09bbbc8b40cf89812036188b6f94ae7627c73c",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "jQuery JavaScript Library",
-            "homepage": "http://jquery.com",
-            "abandoned": true,
-            "time": "2014-05-07 05:00:09"
-        },
-        {
-            "name": "yiisoft/jquery-pjax",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/jquery-pjax.git",
-                "reference": "3f20897307cca046fca5323b318475ae9dac0ca0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/3f20897307cca046fca5323b318475ae9dac0ca0",
-                "reference": "3f20897307cca046fca5323b318475ae9dac0ca0",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/jquery": ">=1.8"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "pushState + ajax = pjax, a forked maintainted by the Yii Framework core developers",
-            "homepage": "https://github.com/yiisoft/jquery-pjax#readme",
-            "time": "2015-03-08 21:03:11"
+            "time": "2015-08-05 01:03:42"
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.0-beta",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "2a71e361b3cebf872ecaba45feaf23a7d2a1491d"
+                "reference": "5add6a5282ff8ba471cd1de37f054670f4b1430a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/2a71e361b3cebf872ecaba45feaf23a7d2a1491d",
-                "reference": "2a71e361b3cebf872ecaba45feaf23a7d2a1491d",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/5add6a5282ff8ba471cd1de37f054670f4b1430a",
+                "reference": "5add6a5282ff8ba471cd1de37f054670f4b1430a",
                 "shasum": ""
             },
             "require": {
-                "cebe/markdown": "0.9.*",
+                "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable",
+                "bower-asset/jquery.inputmask": "~3.2.2",
+                "bower-asset/punycode": "1.3.*",
+                "bower-asset/yii2-pjax": "~2.0.1",
+                "cebe/markdown": "~1.0.0 | ~1.1.0",
+                "ext-ctype": "*",
                 "ext-mbstring": "*",
-                "ezyang/htmlpurifier": "4.6.*",
+                "ezyang/htmlpurifier": "~4.6",
                 "lib-pcre": "*",
                 "php": ">=5.4.0",
-                "yiisoft/jquery": "~2.0 | ~1.10",
-                "yiisoft/jquery-pjax": "*",
-                "yiisoft/yii2-composer": "*"
+                "yiisoft/yii2-composer": "~2.0.4"
             },
+            "bin": [
+                "yii"
+            ],
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "yii\\": ""
@@ -417,6 +517,11 @@
                     "name": "Paul Klimov",
                     "email": "klimov.paul@gmail.com",
                     "role": "Core framework development"
+                },
+                {
+                    "name": "Dmitry Naumenko",
+                    "email": "d.naumenko.a@gmail.com",
+                    "role": "Core framework development"
                 }
             ],
             "description": "Yii PHP Framework Version 2",
@@ -425,7 +530,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2014-04-13 21:58:59"
+            "time": "2016-02-24 07:05:29"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -852,12 +957,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "33fd1b2cfdde601704665fad343014bba04b0753"
+                "reference": "2a4ee40acb880c56f29fb1b8886e7ffe94f3b995"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/33fd1b2cfdde601704665fad343014bba04b0753",
-                "reference": "33fd1b2cfdde601704665fad343014bba04b0753",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/2a4ee40acb880c56f29fb1b8886e7ffe94f3b995",
+                "reference": "2a4ee40acb880c56f29fb1b8886e7ffe94f3b995",
                 "shasum": ""
             },
             "require": {
@@ -893,7 +998,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-02 09:49:18"
+            "time": "2016-02-23 07:41:20"
         }
     ],
     "aliases": [],
