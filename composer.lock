@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f46ab5781a4da78491348ad97b79e6fd",
-    "content-hash": "3b6ae938f9e2d352d349eddee1083a7e",
+    "hash": "3cb208ee192be2d91e3c1c9a5e708974",
+    "content-hash": "f3bf28aaed0a3e4fe7baa951638b21bc",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -57,31 +57,50 @@
             ]
         },
         {
-            "name": "bower-asset/jQuery-QueryBuilder",
-            "version": "2.1.0",
+            "name": "bower-asset/doT",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mistic100/jQuery-QueryBuilder.git",
-                "reference": "e764efea72259f46c6322f0e0dc88f86e6af879b"
+                "url": "https://github.com/olado/doT.git",
+                "reference": "195025f06055761f6da3a900251382e788c42d0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mistic100/jQuery-QueryBuilder/zipball/e764efea72259f46c6322f0e0dc88f86e6af879b",
-                "reference": "e764efea72259f46c6322f0e0dc88f86e6af879b",
+                "url": "https://api.github.com/repos/olado/doT/zipball/195025f06055761f6da3a900251382e788c42d0e",
+                "reference": "195025f06055761f6da3a900251382e788c42d0e",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "time": "2015-01-13 15:30:42"
+        },
+        {
+            "name": "bower-asset/jQuery-QueryBuilder",
+            "version": "2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mistic100/jQuery-QueryBuilder.git",
+                "reference": "4809b8b53a1b700aacb06b006c3ed0ca7b931915"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mistic100/jQuery-QueryBuilder/zipball/4809b8b53a1b700aacb06b006c3ed0ca7b931915",
+                "reference": "4809b8b53a1b700aacb06b006c3ed0ca7b931915",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/bootstrap": ">=3.1.0,<4.0.0",
+                "bower-asset/bootstrap": ">=3.1.0",
+                "bower-asset/dot": "dev-master",
                 "bower-asset/jquery": ">=1.9.0",
                 "bower-asset/jquery-extendext": ">=0.1.1,<0.2.0",
-                "bower-asset/momentjs": ">=2.6.0,<3.0.0"
+                "bower-asset/moment": ">=2.6.0"
             },
             "require-dev": {
                 "bower-asset/awesome-bootstrap-checkbox": ">=0.3.0,<0.4.0",
                 "bower-asset/blanket": ">=1.1.0,<2.0.0",
                 "bower-asset/bootbox": ">=4.3.0,<5.0.0",
                 "bower-asset/bootstrap-select": ">=1.6.0,<2.0.0",
-                "bower-asset/qunit": ">=1.17.0,<2.0.0"
+                "bower-asset/qunit": ">=1.17.0,<2.0.0",
+                "bower-asset/sql-parser": ">=1.0.0,<2.0.0"
             },
             "type": "bower-asset-library",
             "extra": {
@@ -145,39 +164,24 @@
         },
         {
             "name": "bower-asset/jquery-extendext",
-            "version": "dev-master",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mistic100/jQuery.extendext.git",
-                "reference": "cd62f26f5a8ecc774d123255a00a8ee369b418c2"
+                "reference": "98b26f2e2b0e5f5a97edb44539b95bb25676894f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mistic100/jQuery.extendext/zipball/cd62f26f5a8ecc774d123255a00a8ee369b418c2",
-                "reference": "cd62f26f5a8ecc774d123255a00a8ee369b418c2",
+                "url": "https://api.github.com/repos/mistic100/jQuery.extendext/zipball/98b26f2e2b0e5f5a97edb44539b95bb25676894f",
+                "reference": "98b26f2e2b0e5f5a97edb44539b95bb25676894f",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/jquery": ">=1.9.1"
             },
-            "require-dev": {
-                "bower-asset/blanket": ">=1.1.0,<2.0.0",
-                "bower-asset/qunit": ">=1.17.0,<2.0.0"
-            },
             "type": "bower-asset-library",
             "extra": {
-                "bower-asset-main": "jQuery.extendext.js",
-                "bower-asset-ignore": [
-                    "**/.*",
-                    "node_modules",
-                    "bower_components",
-                    "tests",
-                    "package.json",
-                    "Gruntfile.js"
-                ],
-                "branch-alias": {
-                    "dev-master": "0.1.1-dev"
-                }
+                "bower-asset-main": "jQuery.extendext.js"
             },
             "license": [
                 "MIT"
@@ -187,8 +191,7 @@
                 "arrays",
                 "extend",
                 "jQuery"
-            ],
-            "time": "2015-04-08 14:02:42"
+            ]
         },
         {
             "name": "bower-asset/jquery.inputmask",
@@ -237,17 +240,17 @@
             ]
         },
         {
-            "name": "bower-asset/momentjs",
-            "version": "2.11.2",
+            "name": "bower-asset/moment",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moment/moment.git",
-                "reference": "dd9cff0104c0dc3f114f54107397c59920e764cc"
+                "reference": "b135bf1a6d58ff94287f0a21455bfa6a1ddc7226"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moment/moment/zipball/dd9cff0104c0dc3f114f54107397c59920e764cc",
-                "reference": "dd9cff0104c0dc3f114f54107397c59920e764cc",
+                "url": "https://api.github.com/repos/moment/moment/zipball/b135bf1a6d58ff94287f0a21455bfa6a1ddc7226",
+                "reference": "b135bf1a6d58ff94287f0a21455bfa6a1ddc7226",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -271,7 +274,8 @@
                     "package.js",
                     "package.json"
                 ]
-            }
+            },
+            "time": "2016-03-07 09:14:46"
         },
         {
             "name": "bower-asset/punycode",
@@ -303,16 +307,16 @@
         },
         {
             "name": "bower-asset/yii2-pjax",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/jquery-pjax.git",
-                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67"
+                "reference": "60728da6ade5879e807a49ce59ef9a72039b8978"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/6818718408086db6bdcf33649cecb86b6b4f9b67",
-                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67",
+                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/60728da6ade5879e807a49ce59ef9a72039b8978",
+                "reference": "60728da6ade5879e807a49ce59ef9a72039b8978",
                 "shasum": ""
             },
             "require": {
@@ -325,6 +329,7 @@
                     ".travis.yml",
                     "Gemfile",
                     "Gemfile.lock",
+                    "CONTRIBUTING.md",
                     "vendor/",
                     "script/",
                     "test/"
@@ -444,12 +449,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "5add6a5282ff8ba471cd1de37f054670f4b1430a"
+                "reference": "6798f7708b36c485cd45c78e22ab5126c10fbf28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/5add6a5282ff8ba471cd1de37f054670f4b1430a",
-                "reference": "5add6a5282ff8ba471cd1de37f054670f4b1430a",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/6798f7708b36c485cd45c78e22ab5126c10fbf28",
+                "reference": "6798f7708b36c485cd45c78e22ab5126c10fbf28",
                 "shasum": ""
             },
             "require": {
@@ -530,7 +535,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-02-24 07:05:29"
+            "time": "2016-03-10 19:27:53"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -957,12 +962,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "2a4ee40acb880c56f29fb1b8886e7ffe94f3b995"
+                "reference": "584e52cb8f788a887553ba82db6caacb1d6260bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/2a4ee40acb880c56f29fb1b8886e7ffe94f3b995",
-                "reference": "2a4ee40acb880c56f29fb1b8886e7ffe94f3b995",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/584e52cb8f788a887553ba82db6caacb1d6260bb",
+                "reference": "584e52cb8f788a887553ba82db6caacb1d6260bb",
                 "shasum": ""
             },
             "require": {
@@ -998,7 +1003,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-23 07:41:20"
+            "time": "2016-03-04 07:54:35"
         }
     ],
     "aliases": [],
