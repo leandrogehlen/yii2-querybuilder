@@ -18,6 +18,7 @@ use yii\helpers\ArrayHelper;
  *
  *     if ($rules) {
  *         $translator = new Translator(Json::decode($rules));
+ *         $translator->setCurrentParams($query->params);
  *         $query->andWhere($translator->where())
  *               ->addParams($translator->params());
  *     }
@@ -38,6 +39,10 @@ class Translator extends Object
     private $_where;
     private $_params = [];
     private $_operators;
+    /**
+     * @var array The params from yii\db\Query object that are already set so we don't overwrite them
+     */
+    private $currentParams = [];
 
     /**
      * Constructors.
@@ -134,15 +139,13 @@ class Translator extends Object
                 $value = ArrayHelper::getValue($rule, 'value');
 
                 if ($value !== null) {
-                    $i = count($this->_params);
 
                     if (!is_array($value)) {
                         $value = [$value];
                     }
 
                     foreach ($value as $v) {
-                        $params[":p$i"] = $v;
-                        $i++;
+                        $params[":".$this->getNewParamName()] = $v;
                     }
                 }
                 $where[] = $this->encodeRule($field, $operator, $params);
@@ -168,4 +171,29 @@ class Translator extends Object
     {
         return $this->_params;
     }
+    
+    /**
+     * Get a param name that should not conflict with any params already set
+     * @return string
+     */
+    private function getNewParamName(){
+        $paramPrefix = 'p';
+        if(!empty($this->currentParams)){
+            $paramNumber = count($this->currentParams) + 1;
+        }else{
+            $paramNumber = $paramPrefix.count($this->_params) + 1;
+        }
+        return $paramPrefix.$paramNumber;
+    }
+
+   /**
+     * 
+     * @param array $currentParams
+     * @return \leandrogehlen\querybuilder\Translator
+     */
+    public function setCurrentParams($currentParams) {
+        $this->currentParams = $currentParams;
+    }
+
+
 } 
