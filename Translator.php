@@ -182,19 +182,13 @@ class Translator extends Object
      */
     private function getNewParamName(){
         $paramPrefix = 'p';
-        if(!empty($this->currentParams)){
-            if($this->paramsCount >= count($this->currentParams)){
-                $this->paramsCount = $this->paramsCount +1;
-                
-            }else  {
-                $this->paramsCount = count($this->currentParams) +1;
-            }
-            
+        if(!empty($this->currentParams) && $this->paramsCount < count($this->currentParams) ){
+            $this->paramsCount = count($this->currentParams) +1;
         }else{
             $this->paramsCount = $this->paramsCount + 1;
         }
         return $paramPrefix.$this->paramsCount;
-    }  
+    }    
 
    /**
      * 
