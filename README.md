@@ -71,6 +71,7 @@ public function actionIndex()
       $rules = Json::decode(Yii::$app->request->get('rules'));
       if ($rules) {
           $translator = new Translator($rules);
+          $translator->setCurrentParams($query->params);
           $query
             ->andWhere($translator->where())
             ->addParams($translator->params());
