@@ -17,8 +17,7 @@ use yii\helpers\ArrayHelper;
  *     $rules = Yii::$app->request->post('rules');
  *
  *     if ($rules) {
- *         $translator = new Translator(Json::decode($rules));
- *         $translator->setCurrentParams($query->params);
+ *         $translator = new Translator(Json::decode($rules),['currentParams'=>$query->params]);
  *         $query->andWhere($translator->where())
  *               ->addParams($translator->params());
  *     }
