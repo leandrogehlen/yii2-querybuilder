@@ -43,6 +43,7 @@ class Translator extends Object
      * @var array The params from yii\db\Query object that are already set so we don't overwrite them
      */
     private $currentParams = [];
+    private $paramsCount = 0;
 
     /**
      * Constructors.
@@ -51,6 +52,10 @@ class Translator extends Object
      */
     public function __construct($data, $config = [])
     {
+        if(isset($config['currentParams'])){
+            $this->setCurrentParams($config['currentParams']);
+                    
+        }
         parent::__construct($config);
         $this->_where = $this->buildWhere($data);
     }
@@ -169,7 +174,7 @@ class Translator extends Object
      */
     public function params()
     {
-        return $this->_params;
+        return array_merge($this->currentParams, $this->_params);
     }
     
     /**
@@ -179,12 +184,18 @@ class Translator extends Object
     private function getNewParamName(){
         $paramPrefix = 'p';
         if(!empty($this->currentParams)){
-            $paramNumber = count($this->currentParams) + 1;
+            if($this->paramsCount >= count($this->currentParams)){
+                $this->paramsCount = $this->paramsCount +1;
+                
+            }else  {
+                $this->paramsCount = count($this->currentParams) +1;
+            }
+            
         }else{
-            $paramNumber = $paramPrefix.count($this->_params) + 1;
+            $this->paramsCount = $this->paramsCount + 1;
         }
-        return $paramPrefix.$paramNumber;
-    }
+        return $paramPrefix.$this->paramsCount;
+    }  
 
    /**
      * 
