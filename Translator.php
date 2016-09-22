@@ -139,7 +139,7 @@ class Translator extends Object
             } else {
                 $params = [];
                 $operator = $rule['operator'];
-                $field = $rule['field'];
+                $field = "`".$rule['field']."`";
                 $value = ArrayHelper::getValue($rule, 'value');
 
                 if ($value !== null) {
