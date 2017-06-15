@@ -8,7 +8,7 @@
         "issues": "https://github.com/leandrogehlen/yii2-querybuilder/issues",
         "source": "https://github.com/leandrogehlen/yii2-querybuilder"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Leandro Guindani Gehlen",
