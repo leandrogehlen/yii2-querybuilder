@@ -17,6 +17,7 @@
     ],
     "require": {
         "yiisoft/yii2": "2.0.*",
+        "solutosoft/yii2-plugin": "*",
         "bower-asset/jQuery-QueryBuilder": "2.1.*"
     },
     "require-dev": {

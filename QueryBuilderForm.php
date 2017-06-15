@@ -21,18 +21,20 @@ use yii\helpers\Json;
  *
  * ```php
  * <?php QueryBuilderForm::begin([
- *     'rules' => $rules,
- *     'builder' => [
- *         'id' => 'query-builder',
- *         'filters' => [
- *             ['id' => 'id', 'label' => 'Id', 'type' => 'integer'],
- *             ['id' => 'name', 'label' => 'Name', 'type' => 'string'],
- *             ['id' => 'lastName', 'label' => 'Last Name', 'type' => 'string']
- *         ]
- *     ]
+ *    'rules' => $rules,
+ *    'builder' => [
+ *        'id' => 'query-builder',
+ *        'pluginOptions' => [
+ *            'filters' => [
+ *                ['id' => 'id', 'label' => 'Id', 'type' => 'integer'],
+ *                ['id' => 'name', 'label' => 'Name', 'type' => 'string'],
+ *                ['id' => 'lastName', 'label' => 'Last Name', 'type' => 'string']
+ *            ]
+ *        ]
+ *    ]
  * ])?>
  *
- *     <?= Html::submitButton('Apply'); ?>
+ *    <?= Html::submitButton('Apply'); ?>
  *
  * <?php QueryBuilderForm::end() ?>
  * ```
