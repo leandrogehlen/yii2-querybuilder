@@ -17,7 +17,7 @@ use yii\helpers\ArrayHelper;
  *     $rules = Yii::$app->request->post('rules');
  *
  *     if ($rules) {
- *         $translator = new Translator(Json::decode($rules));
+ *         $translator = new Translator(Json::decode($rules),['currentParams'=>$query->params]);
  *         $query->andWhere($translator->where())
  *               ->addParams($translator->params());
  *     }
@@ -38,6 +38,11 @@ class Translator extends Object
     private $_where;
     private $_params = [];
     private $_operators;
+    /**
+     * @var array The params from yii\db\Query object that are already set so we don't overwrite them
+     */
+    private $currentParams = [];
+    private $paramsCount = 0;
 
     /**
      * Constructors.
@@ -46,6 +51,10 @@ class Translator extends Object
      */
     public function __construct($data, $config = [])
     {
+        if(isset($config['currentParams'])){
+            $this->setCurrentParams($config['currentParams']);
+                    
+        }
         parent::__construct($config);
         $this->_where = $this->buildWhere($data);
     }
@@ -134,15 +143,13 @@ class Translator extends Object
                 $value = ArrayHelper::getValue($rule, 'value');
 
                 if ($value !== null) {
-                    $i = count($this->_params);
 
                     if (!is_array($value)) {
                         $value = [$value];
                     }
 
                     foreach ($value as $v) {
-                        $params[":p$i"] = $v;
-                        $i++;
+                        $params[":".$this->getNewParamName()] = $v;
                     }
                 }
                 $where[] = $this->encodeRule($field, $operator, $params);
@@ -166,6 +173,31 @@ class Translator extends Object
      */
     public function params()
     {
-        return $this->_params;
+        return array_merge($this->currentParams, $this->_params);
     }
+    
+    /**
+     * Get a param name that should not conflict with any params already set
+     * @return string
+     */
+    private function getNewParamName(){
+        $paramPrefix = 'p';
+        if(!empty($this->currentParams) && $this->paramsCount < count($this->currentParams) ){
+            $this->paramsCount = count($this->currentParams) +1;
+        }else{
+            $this->paramsCount = $this->paramsCount + 1;
+        }
+        return $paramPrefix.$this->paramsCount;
+    }    
+
+   /**
+     * 
+     * @param array $currentParams
+     * @return \leandrogehlen\querybuilder\Translator
+     */
+    public function setCurrentParams($currentParams) {
+        $this->currentParams = $currentParams;
+    }
+
+
 } 

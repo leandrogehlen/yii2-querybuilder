@@ -70,7 +70,7 @@ public function actionIndex()
       $query = Customer::find();
       $rules = Json::decode(Yii::$app->request->get('rules'));
       if ($rules) {
-          $translator = new Translator($rules);
+          $translator = new Translator($rules,['currentParams'=>$query->params]);
           $query
             ->andWhere($translator->where())
             ->addParams($translator->params());
