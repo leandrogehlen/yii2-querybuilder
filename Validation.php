@@ -3,7 +3,7 @@
 namespace leandrogehlen\querybuilder;
 
 
-use yii\base\Object;
+use yii\base\BaseObject;
 
 /**
  * The validation object representation

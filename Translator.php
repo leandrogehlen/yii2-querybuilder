@@ -2,7 +2,7 @@
 
 namespace leandrogehlen\querybuilder;
 
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\helpers\ArrayHelper;
 
 /**
