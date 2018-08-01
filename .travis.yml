@@ -10,11 +10,11 @@ matrix:
   fast_finish: true
   allow_failures:
     - php: hhvm
-    - php: hhvm-nightly    
+    - php: hhvm-nightly
 
 install:
   - travis_retry composer self-update && composer --version
-  - travis_retry composer global require "fxp/composer-asset-plugin:~1.1.1"
+  - travis_retry composer global require "fxp/composer-asset-plugin:^1.4.4"
   - travis_retry composer install --prefer-dist --no-interaction
 
 script:
