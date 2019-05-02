@@ -24,7 +24,7 @@
     "require": {
         "yiisoft/yii2": "~2.0.0",
         "solutosoft/yii2-plugin": "~1.0.0",
-        "bower-asset/jQuery-QueryBuilder": "~2.4.0"
+        "bower-asset/jquery-querybuilder": "~2.4.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.4"
