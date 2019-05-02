@@ -4,11 +4,11 @@
     "keywords": ["yii2", "dynamic", "query", "builder", "querybuilder", "interface"],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
+    "prefer-stable": true,
     "support": {
         "issues": "https://github.com/leandrogehlen/yii2-querybuilder/issues",
         "source": "https://github.com/leandrogehlen/yii2-querybuilder"
     },
-    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Leandro Guindani Gehlen",
@@ -23,7 +23,7 @@
     ],
     "require": {
         "yiisoft/yii2": "~2.0.0",
-        "solutosoft/yii2-plugin": "*",
+        "solutosoft/yii2-plugin": "~1.0.0",
         "bower-asset/jQuery-QueryBuilder": "~2.4.0"
     },
     "require-dev": {
@@ -31,5 +31,10 @@
     },
     "autoload": {
         "psr-4": { "leandrogehlen\\querybuilder\\": "" }
-    }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+  }
 }
