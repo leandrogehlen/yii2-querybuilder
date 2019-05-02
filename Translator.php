@@ -2,7 +2,7 @@
 
 namespace leandrogehlen\querybuilder;
 
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -33,7 +33,7 @@ use yii\helpers\ArrayHelper;
  * ```
  * @author Leandro Gehlen <leandrogehlen@gmail.com>
  */
-class Translator extends Object
+class Translator extends BaseObject
 {
     private $_where;
     private $_params = [];
