@@ -149,13 +149,9 @@ class Translator extends BaseObject
                 $where[] = $this->encodeRule($field, $operator, $params);
                 $this->filteredByFields[$field] = true;
             }
-        }
+        }        
 
-        if (count($where) > 0) {
-            return "(" . implode($condition, $where) . ")";
-        }
-
-        return '';
+        return  !empty($where) ? "(" . implode($condition, $where) . ")" :  '';
     }
 
     /**
@@ -189,13 +185,6 @@ class Translator extends BaseObject
      */
     public function hasWhere():bool
     {
-        if (
-            $this->_where == '' ||
-            $this->_where == '()'
-        ) {
-            return false;
-        }
-
-        return true;
+        return  $this->_where && $this->_where !== '()';
     }
 } 
