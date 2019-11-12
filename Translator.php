@@ -38,7 +38,7 @@ class Translator extends BaseObject
     protected $_where;
     protected $_params = [];
     protected $_operators;
-    protected $filteredByFields = [];
+    protected $_filteredByFields = [];
 
     /**
      * Constructors.
@@ -147,7 +147,7 @@ class Translator extends BaseObject
                     }
                 }
                 $where[] = $this->encodeRule($field, $operator, $params);
-                $this->filteredByFields[$field] = true;
+                $this->_filteredByFields[$field] = true;
             }
         }        
 
@@ -173,17 +173,19 @@ class Translator extends BaseObject
     }
 
     /**.
+     * Returns array of rules which were applied.
      * @return array
      */
-    public function filteredByFields():array
+    public function filteredByFields()
     {
-        return $this->filteredByFields;
+        return $this->_filteredByFields;
     }
 
-    /**.
+    /**
+     * Returns true if where condition not empty.
      * @return bool
      */
-    public function hasWhere():bool
+    public function hasWhere()
     {
         return  $this->_where && $this->_where !== '()';
     }
