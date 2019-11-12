@@ -35,9 +35,10 @@ use yii\helpers\ArrayHelper;
  */
 class Translator extends BaseObject
 {
-    private $_where;
-    private $_params = [];
-    private $_operators;
+    protected $_where;
+    protected $_params = [];
+    protected $_operators;
+    protected $filteredByFields = [];
 
     /**
      * Constructors.
@@ -111,7 +112,7 @@ class Translator extends BaseObject
         return $field . " " . ($replacement ? str_replace("?", $replacement, $pattern) : $pattern);
     }
 
-    /**
+     /**
      * @param array $data rules configuration
      * @return string the WHERE clause
      */
@@ -146,9 +147,15 @@ class Translator extends BaseObject
                     }
                 }
                 $where[] = $this->encodeRule($field, $operator, $params);
+                $this->filteredByFields[$field] = true;
             }
         }
-        return "(" . implode($condition, $where) . ")";
+
+        if (count($where) > 0) {
+            return "(" . implode($condition, $where) . ")";
+        }
+
+        return '';
     }
 
     /**
@@ -167,5 +174,28 @@ class Translator extends BaseObject
     public function params()
     {
         return $this->_params;
+    }
+
+    /**.
+     * @return array
+     */
+    public function filteredByFields():array
+    {
+        return $this->filteredByFields;
+    }
+
+    /**.
+     * @return bool
+     */
+    public function hasWhere():bool
+    {
+        if (
+            $this->_where == '' ||
+            $this->_where == '()'
+        ) {
+            return false;
+        }
+
+        return true;
     }
 } 
