@@ -17,7 +17,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-        $vendorDir = __DIR__ . '/../../vendor';
+        $vendorDir = __DIR__ . '/../vendor';
         $vendorAutoload = $vendorDir . '/autoload.php';
         if (file_exists($vendorAutoload)) {
             require_once($vendorAutoload);

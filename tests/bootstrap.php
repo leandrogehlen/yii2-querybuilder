@@ -9,7 +9,7 @@ $_SERVER['SCRIPT_NAME'] = '/' . __DIR__;
 $_SERVER['SCRIPT_FILENAME'] = __FILE__;
 
 // require composer autoloader if available
-$vendor = __DIR__ . '/../../vendor';
+$vendor = __DIR__ . '/../vendor';
 
 require_once($vendor . '/autoload.php');
 require_once($vendor . '/yiisoft/yii2/Yii.php');
