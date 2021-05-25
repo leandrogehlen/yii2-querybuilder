@@ -8,7 +8,7 @@ use Yii;
 /**
  * This is the base class for all unit tests.
  */
-class TestCase extends \PHPUnit_Framework_TestCase
+class TestCase extends  \PHPUnit\Framework\TestCase
 {
     /**
      * This method is called before the first test of this test class is run.
