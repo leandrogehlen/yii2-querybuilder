@@ -47,6 +47,12 @@ class TranslatorTest extends TestCase
             ],
             [
                 ['condition' => "and", 'rules' => [
+                    [ 'field' => 'date', 'type' => 'date', 'operator' => 'not_between', 'value' => ['2015-01-01','2015-01-30']],
+                ]],
+                ['(date NOT BETWEEN :p0 AND :p1)', [':p0'=>'2015-01-01', ':p1'=>'2015-01-30']]
+            ],
+            [
+                ['condition' => "and", 'rules' => [
                     [ 'field' => 'name', 'type' => 'string', 'operator' => 'begins_with', 'value' => 'joe'],
                     [ 'field' => 'name', 'type' => 'string', 'operator' => 'not_begins_with', 'value' => 'bruce'],
                 ]],
@@ -111,4 +117,4 @@ class TranslatorTest extends TestCase
             }
         }
     }
-} 
+}

@@ -65,6 +65,7 @@ class Translator extends BaseObject
             'greater' =>          '> ?',
             'greater_or_equal' => '>= ?',
             'between' =>          ['op' => 'BETWEEN ?',   'list' => true, 'sep' => ' AND '],
+            'not_between' =>      ['op' => 'NOT BETWEEN ?',   'list' => true, 'sep' => ' AND '],
             'begins_with' =>      ['op' => 'LIKE ?',     'fn' => function($value){ return "$value%"; } ],
             'not_begins_with' =>  ['op' => 'NOT LIKE ?', 'fn' => function($value){ return "$value%"; } ],
             'contains' =>         ['op' => 'LIKE ?',     'fn' => function($value){ return "%$value%"; } ],
@@ -168,4 +169,4 @@ class Translator extends BaseObject
     {
         return $this->_params;
     }
-} 
+}
