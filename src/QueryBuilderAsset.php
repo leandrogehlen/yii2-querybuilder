@@ -22,8 +22,7 @@ class QueryBuilderAsset extends AssetBundle {
     ];
 
     public $depends = [
-        'yii\web\JqueryAsset',
-        'leandrogehlen\querybuilder\BootstrapAsset',
+        'yii\web\JqueryAsset'
     ];
 
-} 
+}

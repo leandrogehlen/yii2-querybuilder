@@ -35,6 +35,30 @@ to the require section of your `composer.json` file.
 How to use
 ----------
 
+The extension depends bootstrap css then is necessary adds it in your AppAsset:
+
+```php
+class AppAsset extends AssetBundle {
+
+
+    public $js = [
+        ...
+    ];
+
+    public $css = [
+        ...
+    ];
+
+    public $depends = [
+        ...
+        'yii\bootstrap\BootstrapAsset', // or 'yii\bootstrap4\BootstrapAsset'
+    ];
+
+}
+```
+
+
+
 **View**:
 
 ```php
