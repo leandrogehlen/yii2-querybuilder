@@ -87,3 +87,21 @@ public function actionIndex()
     ]);
 }
 ```
+
+
+Using Bootstrap 4
+----------
+
+If you use Bootstrap 4 as your template, you should modify your `params.php` with `bsVersion` params like this. We follow kartik convention in set Bootstrap version.
+
+**app\config\params.php**:
+
+```php
+    //  .....
+
+    /**
+     * setup global bootstrap version for Kartik ekstensions
+     */
+    'bsVersion' => '4.x',
+    //  .....
+```
