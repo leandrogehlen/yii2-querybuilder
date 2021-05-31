@@ -35,19 +35,12 @@ to the require section of your `composer.json` file.
 How to use
 ----------
 
-The extension depends bootstrap css then is necessary adds it in your AppAsset:
+The extension depends the bootstrap css then is necessary adds it in `AppAsset`:
 
 ```php
 class AppAsset extends AssetBundle {
 
-
-    public $js = [
-        ...
-    ];
-
-    public $css = [
-        ...
-    ];
+    ...
 
     public $depends = [
         ...
@@ -56,8 +49,6 @@ class AppAsset extends AssetBundle {
 
 }
 ```
-
-
 
 **View**:
 
